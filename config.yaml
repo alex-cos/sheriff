@@ -1,0 +1,11 @@
+services:
+  - name: dummy3
+    command: "bash.exe"
+    arguments: ["fake1.sh"]
+  - name: dummy1
+    command: "bash.exe"
+    arguments: ["fake1.sh"]
+    dependsOn: ["dummy2", "dummy3"]
+  - name: dummy2
+    command: "bash.exe"
+    arguments: ["fake2.sh"]

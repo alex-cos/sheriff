@@ -1,0 +1,6 @@
+monitor:
+  period: 60s
+  restart: false
+services
+  - name: broken
+    command: "echo"

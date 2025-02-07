@@ -1,0 +1,17 @@
+stopTimeout: 20s
+logLevel: info
+monitor:
+  period: 30s
+  restart: true
+services:
+  - name: dummy3
+    command: "bash.exe"
+    arguments: ["testdata/fake1.sh"]
+  - name: dummy1
+    command: "bash.exe"
+    arguments: ["testdata/fake1.sh"]
+    dependsOn: ["dummy2", "dummy3"]
+    restartDeps: true
+  - name: dummy2
+    command: "bash.exe"
+    arguments: ["testdata/fake2.sh"]

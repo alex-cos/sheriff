@@ -1,0 +1,18 @@
+monitor:
+  period: 60s
+  restart: false
+services:
+  - name: database
+    command: "postgres"
+    arguments: ["-D", "/var/lib/postgresql/data"]
+
+  - name: api
+    command: "server"
+    arguments: ["--verbose"]
+    dependsOn: ["database"]
+    restartDeps: true
+
+  - name: frontend
+    command: "nginx"
+    arguments: ["-g", "daemon off;"]
+    dependsOn: ["api"]

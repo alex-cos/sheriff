@@ -1,0 +1,11 @@
+# Ignore the followings directories or files:
+
+bin
+vendor
+tmp
+
+# ignore sonar scanner files
+**/.scannerwork
+
+# ignore windows Thumbs database
+**/Thumbs.db
